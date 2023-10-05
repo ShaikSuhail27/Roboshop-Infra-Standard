@@ -28,6 +28,11 @@ pipeline {
                 '''
             }
         }
+        stage('Approve') {
+            steps {
+                input 'shall i apply?'
+            }
+        }
     }
     post { 
         always { 
