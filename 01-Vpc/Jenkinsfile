@@ -6,8 +6,8 @@ pipeline {
             steps {
                 echo 'initializing..'
                 sh '''
-                cd 01-Vpc
-                terraform init
+                 ls -ltr
+                 pwd
 
                 '''
             }
@@ -16,8 +16,9 @@ pipeline {
             steps {
                 echo 'planning..'
                  sh '''
-                 cd 01-Vpc
-                 terraform plan
+                 ls -ltr
+                 pwd
+                 
                 '''
             }
         }
