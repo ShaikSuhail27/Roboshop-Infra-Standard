@@ -1,5 +1,5 @@
 module "Roboshop-vpc" {
-    source = "../../Terraform-vpc-advanced-module"
+    source = "git::https://github.com/ShaikSuhail27/Terraform-vpc-advanced-module.git"
     cidr_block = var.cidr_block_u
     common_tags = var.common_tags_u
     project_name = var.project_name_u
