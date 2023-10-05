@@ -1,0 +1,35 @@
+pipeline {
+    agent { node { label 'Agent-1' } }
+
+    stages {
+        stage('init') {
+            steps {
+                echo 'initializing..'
+                sh '''
+                cd 01-Vpc
+                terraform init
+
+                '''
+            }
+        }
+        stage('planning') {
+            steps {
+                echo 'planning..'
+                 sh '''
+                 cd 01-Vpc
+                 terraform plan
+                '''
+            }
+        }
+    post { 
+        always { 
+            echo 'it will always run whether it is success or not'
+        }
+        success{
+            echo 'it will run if it is success'
+        }
+        failure{
+            echo 'it will run if it is failure'
+        }
+    }
+}
